@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">To Do List App</string>
+
+    <string name="titulo">Digite qual é a Tarefa</string>
+    <string name="descricao">Digite a descricao</string>
+    <string name="digite_aqui">Digite aqui</string>
+    <string name="data">Selecione a data</string>
+    <string name="salvar">Salvar</string>
+</resources>
