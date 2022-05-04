@@ -7,4 +7,8 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="cinza_tarefa">#adb5bd</color>
+    <color name="verde_finalizada">#70e000</color>
+    <color name="vermelho_incompleto">#bf0603</color>
+    <color name="amarelo_andamento">#f4e409</color>
 </resources>

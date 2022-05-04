@@ -6,4 +6,9 @@
     <string name="digite_aqui">Digite aqui</string>
     <string name="data">Selecione a data</string>
     <string name="salvar">Salvar</string>
+    <string name="adicionar">Adicionar Tarefa</string>
+    <string name="exemplo">Exemplo</string>
+    <string name="finalizada"> Tarefa Finalizada</string>
+    <string name="aberta">tarefa em andamento</string>
+
 </resources>
