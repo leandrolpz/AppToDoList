@@ -3,8 +3,10 @@ package br.senai.sp.cotia.todolistapp.model;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import java.io.Serializable;
+
 @Entity
-public class Tarefa {
+public class Tarefa implements Serializable {
     @PrimaryKey(autoGenerate = true)
     private Long idTarefa;
     private String titulo;
@@ -62,7 +64,7 @@ public class Tarefa {
         this.dataFinalizada = dataFinalizada;
     }
 
-    public boolean isConcluida(){
+    public boolean isConcluida() {
         return dataFinalizada != 0;
     }
 }

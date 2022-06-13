@@ -14,8 +14,10 @@ import br.senai.sp.cotia.todolistapp.model.Tarefa;
 public interface TarefaDao {
     @Insert
     void insert(Tarefa t);
+
     @Update
     void update(Tarefa t);
+
     @Delete
     void delete(Tarefa t);
 

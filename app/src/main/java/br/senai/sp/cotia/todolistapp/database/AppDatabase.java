@@ -12,12 +12,13 @@ import br.senai.sp.cotia.todolistapp.model.Tarefa;
 public abstract class AppDatabase extends RoomDatabase {
     // variavel para acessar a database
     private static AppDatabase database;
+
     // metodo para tarefadao
     public abstract TarefaDao getTarefaDao();
 
-    public static AppDatabase getDatabase(Context context){
+    public static AppDatabase getDatabase(Context context) {
         // verifica se a database é nula
-        if (database == null){
+        if (database == null) {
             //instancia a database
             database = Room.databaseBuilder(context.getApplicationContext(), AppDatabase.class, "todoList").build();
         }

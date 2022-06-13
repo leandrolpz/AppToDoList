@@ -5,10 +5,16 @@
     <string name="descricao">Digite a descricao</string>
     <string name="digite_aqui">Digite aqui</string>
     <string name="data">Selecione a data</string>
+    <string name="data_term">data termino</string>
     <string name="salvar">Salvar</string>
     <string name="adicionar">Adicionar Tarefa</string>
     <string name="exemplo">Exemplo</string>
     <string name="finalizada"> Tarefa Finalizada</string>
     <string name="aberta">tarefa em andamento</string>
+    <string name="atraso">tarefa com atraso</string>
+    <string name="titulo_detalhe">Titulo da Tarefa</string>
+    <string name="origem_imagem">Qual a origem da imagem</string>
+    <string name="camera">Camera</string>
+    <string name="galeria">Galeria</string>
 
 </resources>

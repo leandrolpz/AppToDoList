@@ -1,6 +1,7 @@
 package br.senai.sp.cotia.todolistapp.adapter;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,11 +21,14 @@ public class TarefaAdapter extends RecyclerView.Adapter<TarefaAdapter.TarefaView
     private List<Tarefa> tarefas;
     // variavel para o context
     private Context context;
+    // variavel para o listener
+    private OnTarefaClickListener listenerTarefa;
 
     // construtor que recebe os parametros para o Adapter
-    public TarefaAdapter(List<Tarefa> lista, Context contexto) {
+    public TarefaAdapter(List<Tarefa> lista, Context contexto, OnTarefaClickListener listenerTarefa) {
         this.tarefas = lista;
         this.context = contexto;
+        this.listenerTarefa = listenerTarefa;
     }
 
     @NonNull
@@ -46,6 +50,7 @@ public class TarefaAdapter extends RecyclerView.Adapter<TarefaAdapter.TarefaView
         // formata a data e exibe no textView
         SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/yyyy");
         holder.tvData.setText(formatador.format(t.getDataPrevista()));
+        holder.tvDescricao.setText(t.getDescricao());
         // verifica se esta concluida
         if (t.isConcluida()) {
             holder.tvStatus.setText(R.string.finalizada);
@@ -54,6 +59,10 @@ public class TarefaAdapter extends RecyclerView.Adapter<TarefaAdapter.TarefaView
             holder.tvStatus.setText(R.string.aberta);
             holder.tvStatus.setBackgroundColor(context.getResources().getColor(R.color.amarelo_andamento));
         }
+        // implementa o click na tarefa
+        holder.itemView.setOnClickListener(v -> {
+            listenerTarefa.onClick(v, t);
+        });
     }
 
     @Override
@@ -71,11 +80,15 @@ public class TarefaAdapter extends RecyclerView.Adapter<TarefaAdapter.TarefaView
         public TarefaViewHolder(View view) {
             super(view);
             // passar da view para os componentes
-
             tvTitulo = view.findViewById(R.id.tv_nome_tarefa);
             tvData = view.findViewById(R.id.tv_data_tarefa);
             tvStatus = view.findViewById(R.id.tv_status_tarefa);
             tvDescricao = view.findViewById(R.id.tv_part_descricao);
         }
+    }
+
+    // interface para o click na tarefa
+    public interface OnTarefaClickListener {
+        void onClick(View v, Tarefa t);
     }
 }
